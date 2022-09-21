@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SkoleIT.ViewModels.Dashboard
 {
-    public partial class StudentSkemaPage : BaseViewModel
+    public partial class StudentSkemaPageViewModel : BaseViewModel
     {
-        public StudentSkemaPage()
+        public StudentSkemaPageViewModel()
         {
             AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
         }

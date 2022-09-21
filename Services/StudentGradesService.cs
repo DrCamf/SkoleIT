@@ -11,9 +11,9 @@ namespace SkoleIT.Services
 {
     public class StudentGradesService
     {
-        Grades grades = new();
+        //Grades grades = new();
 
-        public Grades GetGrades(int id)
+        public List<Grades> GetGrades(int id)
         {
             var url = "https://svt.elthoro.dk";
             var client = new RestClient(url);
@@ -25,7 +25,7 @@ namespace SkoleIT.Services
 
             if (response.IsSuccessful)
             {
-                return JsonConvert.DeserializeObject<Grades>(response.Content);
+                return JsonConvert.DeserializeObject<List<Grades>>(response.Content);
             }
             else
             {

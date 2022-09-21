@@ -2,7 +2,8 @@
 <ContentPage x:Class="SkoleIT.Views.Dashboard.StudentProfilePage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SkoleIT.Views.Dashboard">
+             xmlns:local="clr-namespace:SkoleIT.ViewModels.Dashboard"
+             x:DataType="local:StudentProfilePageViewModel">
     <ContentPage.Content>
         <ScrollView >
             <StackLayout>
@@ -15,8 +16,8 @@
                     IsClippedToBounds="True">
                             <Image Source="case_sde_logo.svg" HeightRequest="118" WidthRequest="118"/>
                         </Frame>
-                        <Label Text="Alexander W.P" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Text="Syddansk Erhvervskole" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Text="{Binding FullName}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/><!--fullname-->
+                        <Label Text="{Binding School}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/> <!--school-->
                     </StackLayout>
                 </ContentView>
 
@@ -28,7 +29,7 @@
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding UniLogin}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!--username-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -39,12 +40,12 @@
                 <!-- NAME -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="NAME" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding FullName}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!--fullname-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -55,12 +56,12 @@
                 <!-- INSTITUTION -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="INSTITUTION" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding School}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!--school-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -71,12 +72,12 @@
                 <!-- BIRTHDATE -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="DATE OF BIRTH" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding Birth}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!--birth-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -87,12 +88,12 @@
                 <!-- PHONE -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="PHONE" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding Phone}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!--phone-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -103,12 +104,12 @@
                 <!-- ALTERNATIVE PHONE -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="ALTERNATIVE PHONE" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding PhoneAlt}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!--phone alter-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -119,12 +120,12 @@
                 <!-- PRIVATE EMAIL -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="PRIVATE EMAIL" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding EmailAlt}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!--email priv-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -135,12 +136,12 @@
                 <!-- ALTERNATIVE EMAIL -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="SKOLE EMAIL" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding EmailSchool}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!--email skole-->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
@@ -151,24 +152,77 @@
                 <!-- ADDRESS -->
                 <ContentView Padding="0,0,0,20">
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        <Label Text="ADDRESS" TextColor="#535353"/>
                         <ContentView>
                             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                 <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                     <Frame BorderColor="White" HeightRequest="32">
-                                        <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <Label Text="{Binding Adress}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        
+                                        
+                                        <!--ADress--> <!--by post -->
                                     </Frame>
                                 </VerticalStackLayout>
                             </ContentView>
                         </ContentView>
                     </StackLayout>
                 </ContentView>
-                
-                <!-- Absence area -->
-                <ContentView>
-                    
+
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <Label Text="POST" TextColor="#535353"/>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+                                        
+                                            <Label Text="{Binding Post}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                           
+                                        <!--ADress-->
+                                        <!--by post -->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
                 </ContentView>
-                    
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <Label Text="City" TextColor="#535353"/>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+
+                                        <Label Text="{Binding City}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+
+                                        <!--ADress-->
+                                        <!--by post -->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
+                </ContentView>
+
+
+                <!-- Absence area -->
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <Label Text="Fravær" TextColor="#535353"/>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+                                        <Label Text="{Binding Absent}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <!--email skole-->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
+                </ContentView>
+
                 <!-- Education Info -->
                 <ContentView>
                     <StackLayout>
@@ -176,12 +230,12 @@
                         <!-- EDUCATION LENGTH -->
                         <ContentView Padding="0,0,0,20">
                             <StackLayout HorizontalOptions="Center">
-                                <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                                <Label Text="EDUCATION LENGTH" TextColor="#535353"/>
                                 <ContentView>
                                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                             <Frame BorderColor="White" HeightRequest="32">
-                                                <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                                <Label Text="{Binding EndDate}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- edu end -->
                                             </Frame>
                                         </VerticalStackLayout>
                                     </ContentView>
@@ -192,12 +246,12 @@
                         <!-- CONTACT TEACHER -->
                         <ContentView Padding="0,0,0,20">
                             <StackLayout HorizontalOptions="Center">
-                                <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                                <Label Text="CONTACT TEACHER" TextColor="#535353"/>
                                 <ContentView>
                                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                             <Frame BorderColor="White" HeightRequest="32">
-                                                <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                                <Label Text="{Binding Contact}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- teacher contact -->
                                             </Frame>
                                         </VerticalStackLayout>
                                     </ContentView>
@@ -208,12 +262,12 @@
                         <!-- CLASS -->
                         <ContentView Padding="0,0,0,20">
                             <StackLayout HorizontalOptions="Center">
-                                <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                                <Label Text="CLASS" TextColor="#535353"/>
                                 <ContentView>
                                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                             <Frame BorderColor="White" HeightRequest="32">
-                                                <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                                <Label Text="{Binding ClassName}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- class -->
                                             </Frame>
                                         </VerticalStackLayout>
                                     </ContentView>
@@ -224,12 +278,12 @@
                         <!-- CLASS START -->
                         <ContentView Padding="0,0,0,20">
                             <StackLayout HorizontalOptions="Center">
-                                <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                                <Label Text="CLASS START" TextColor="#535353"/>
                                 <ContentView>
                                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                             <Frame BorderColor="White" HeightRequest="32">
-                                                <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                                <Label Text="{Binding ClassStart}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- class start-->
                                             </Frame>
                                         </VerticalStackLayout>
                                     </ContentView>
@@ -240,12 +294,12 @@
                         <!-- CLASS END -->
                         <ContentView Padding="0,0,0,20">
                             <StackLayout HorizontalOptions="Center">
-                                <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                                <Label Text="CLASS END" TextColor="#535353"/>
                                 <ContentView>
                                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                                             <Frame BorderColor="White" HeightRequest="32">
-                                                <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                                <Label Text="{Binding ClassEnd}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- class end -->
                                             </Frame>
                                         </VerticalStackLayout>
                                     </ContentView>

@@ -33,7 +33,7 @@ namespace SkoleIT.Models
                     Title = "Dashboard Page",
                     Route = nameof(StudentDashboardPage),
                     FlyoutDisplayOptions = FlyoutDisplayOptions.AsMultipleItems,
-                    Items =
+                   /* Items =
                             {
                                 new ShellContent
                                 {
@@ -105,7 +105,7 @@ namespace SkoleIT.Models
                                     Route = "FileArchive",
 
                                 }
-                            }
+                            }*/
                 };
                 if (!AppShell.Current.Items.Contains(flyoutItem))
                 {

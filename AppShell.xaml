@@ -9,22 +9,53 @@
     xmlns:dashboardPages="clr-namespace:SkoleIT.Views.Dashboard"
     xmlns:startupPages="clr-namespace:SkoleIT.Views.Startup">
 
-    <ShellContent
+    <FlyoutItem Title="Flyout 1" FlyoutDisplayOptions="AsMultipleItems">
+        <!-- Startup Pages skal være i top -->
+        <ShellContent
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate startupPages:LoadingPage}"
         Route="LoadingPage" />
 
-    <ShellContent
+        <ShellContent
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate startupPages:LoginPage}"
         Route="LoginPage"
         Title="Login Page" />
+        
+        <ShellContent
+            Title="Student Card"
+            ContentTemplate="{DataTemplate dashboardPages:StudentDashboardPage}"
+            Route="StudentDashboardPage"/>
+
+
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate dashboardPages:StudentProfilePage}"
+            Route="StudentProfilePage"/>
+
+        <ShellContent
+            Title="Grades"
+            ContentTemplate="{DataTemplate dashboardPages:StudentGradesPage}"
+            Route="StudentGradesPage"/>
+        <ShellContent
+            Title="Schedule"
+            ContentTemplate="{DataTemplate dashboardPages:StudentSkemaPage}"
+            Route="StudentSkemaPage"/>
+
+
+    </FlyoutItem>
+
+
+
+    
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" />
         </StackLayout>
     </Shell.FlyoutFooter>
+
+
 </Shell>

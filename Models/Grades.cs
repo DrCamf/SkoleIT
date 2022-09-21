@@ -8,10 +8,24 @@ namespace SkoleIT.Models
 {
     public class Grades
     {
-        public string Fag { get; set; }
-        public string Niveau { get; set; }
-        public string Grade { get; set; }
-        public string Type { get; set; }
-        public string GradeDate { get; set; }
+        public string FAG { get; set; }
+        public string level { get; set; }
+        public string grades { get; set; }
+        public string TYPE { get; set; }
+        public string date { get; set; }
+
+        public Grades(string fag, string niveau, string grade, string type)
+        {
+            FAG = fag;
+            level = niveau;
+            grades = grade;
+            TYPE = type;
+           
+        }
+
+        /*public Grades()
+        {
+
+        }*/
     }
 }
