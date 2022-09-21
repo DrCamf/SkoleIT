@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SkoleIT.Views.Dashboard.StudentDashboardPage"
+             xmlns:local="clr-namespace:SkoleIT.ViewModels.Dashboard"
+             x:DataType="local:StudentDashboardPageViewModel"
              Title="StudentDashboardPage"
              BackgroundColor="White">
     <StackLayout>
@@ -11,10 +13,10 @@
                     BorderColor="White"
                     CornerRadius="100"
                     IsClippedToBounds="True">
-                    <Image Source="case_sde_logo.svg" HeightRequest="118" WidthRequest="118"/>
+                    <Image Source="{Binding StudentImage}" HeightRequest="118" WidthRequest="118"/>  <!-- billede -->
                 </Frame>
-                <Label Text="Alexander W.P" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Text="Syddansk Erhvervskole" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Label Text="{Binding FullName}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>  <!-- Full name -->
+                <Label Text="{Binding School}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>  <!-- school -->
             </StackLayout>
         </ContentView>
         <ContentView Padding="0,0,0,20">
@@ -26,7 +28,7 @@
                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                             <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="Alex5562" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                <Label Text="{Binding UniLogin}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- login -->
                             </Frame>
                         </VerticalStackLayout>
                     </ContentView>
@@ -42,7 +44,7 @@
                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                             <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="Alexander" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                <Label  Text="{Binding FullName}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!-- name -->
                             </Frame>
                         </VerticalStackLayout>
                     </ContentView>
@@ -52,13 +54,13 @@
         <ContentView Padding="0,0,0,20">
             <StackLayout HorizontalOptions="Center">
                 <ContentView Padding="10,0,0,0">
-                    <Label Text="INSTITUTION:" TextColor="#535353"/>
+                    <Label Text="INSTITUTION:" TextColor="#535353"/> 
                 </ContentView>
                 <ContentView>
                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                             <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="Syddansk Erhvervskole" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                <Label Text="{Binding School}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- insti -->
                             </Frame>
                         </VerticalStackLayout>
                     </ContentView>
@@ -74,7 +76,7 @@
                     <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
                         <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
                             <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="20/05/1999" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                <Label Text="{Binding Birth}" HeightRequest="21" TextColor="#535353" FontSize="15"/>  <!-- birth -->
                             </Frame>
                         </VerticalStackLayout>
                     </ContentView>
@@ -84,9 +86,9 @@
         <ContentView>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="2">
                 <Label Text="Validated by" HorizontalOptions="Center" Padding="2"/>
-                <Label Text="Syddansk Erhvervskole" HorizontalOptions="Center" Padding="2"/>
-                <Label Text="01/01/2017" HorizontalOptions="Center" Padding="2,0,0,20"/>
-                <Button Text="CHECK" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" Padding="50,10" BackgroundColor="#0E7E93"/>
+                <Label Text="{Binding School}" HorizontalOptions="Center" Padding="2"/>  <!-- school -->
+                <Label Text="{Binding EndDate}" HorizontalOptions="Center" Padding="2,0,0,20"/>  <!-- enddate -->
+                <!--<Button Text="CHECK" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" Padding="50,10" BackgroundColor="#0E7E93"/>-->
             </StackLayout>
         </ContentView>
     </StackLayout>

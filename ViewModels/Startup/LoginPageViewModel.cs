@@ -61,7 +61,7 @@ namespace SkoleIT.ViewModels.Startup
                 
                 if (response.userId > 0)
                 {
-                    await AppShell.Current.DisplayAlert("Valid User", "Correct", "OK");
+                    //await AppShell.Current.DisplayAlert("Valid User", "Correct", "OK");
                 
 
                     // Student Role, Teacher Role, Admin Role,
@@ -69,11 +69,13 @@ namespace SkoleIT.ViewModels.Startup
                     {
                         userDetails.RoleID = (int)RoleDetails.Student;
                         userDetails.RoleText = "Student Role";
+                        userDetails.UserId = response.userId;
                     }
                     else 
                     {
                         userDetails.RoleID = (int)RoleDetails.Teacher;
                         userDetails.RoleText = "Teacher Role";
+                        userDetails.UserId = response.userId;
                     }
 
                     /*string username = Email;

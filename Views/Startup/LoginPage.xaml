@@ -21,8 +21,9 @@
         <ContentView>
             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center">
                 <VerticalStackLayout BackgroundColor="White" Padding="10,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center">
+                    <!--{Binding Email}"-->
                     <handlers:BorderlessEntry
-                        Text="{Binding Email}"
+                        Text="{Binding Email}" 
                         Margin="20,0,0,0"
                         VerticalOptions="Center"
                         Placeholder="Username"
@@ -35,6 +36,7 @@
         <ContentView>
             <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center">
                 <VerticalStackLayout BackgroundColor="White" Padding="10,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center">
+                    <!---->
                     <handlers:BorderlessEntry
                         Text="{Binding Password}"
                         Margin="20,0,0,0"
