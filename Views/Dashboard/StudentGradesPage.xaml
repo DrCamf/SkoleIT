@@ -13,9 +13,9 @@
                     IsClippedToBounds="True">
                         <Image Source="case_sde_logo.svg" HeightRequest="118" WidthRequest="118"/>
                     </Frame>
-                    <Label Text="Student" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="Syddansk Erhvervskole" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="GRADES"/>
+                    <Label Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Institution}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="GRADES" FontAttributes="Bold" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </StackLayout>
             </ContentView>
             
@@ -23,24 +23,19 @@
             <ContentView>
                 
                 <!-- Needs to loop and create these through the model-->
-                <ContentView Padding="0,0,0,20">
-                    <FlexLayout>
-                        <ContentView>
-                            <Label Text="Network"/> <!-- Fag -->
-                        </ContentView>
-                        <ContentView>
-                            <HorizontalStackLayout>
-                                <ContentView>
-                                    <Label Text="H4"/> <!-- Hovedforløbet -->
-                                </ContentView>
-                                <ContentView>
-                                    <Label Text="12"/> <!-- Karakter -->
-                                </ContentView>
-                            </HorizontalStackLayout>
-                        </ContentView>
-                    </FlexLayout>
-                </ContentView>
-                
+                <Grid ColumnDefinitions="*" Padding="10" HeightRequest="50" BackgroundColor="LightBlue">
+                    
+                    <Label Text="Network" FontSize="20" FontAttributes="Bold" BackgroundColor="LightCoral" VerticalOptions="Center"/>
+                    
+                    <ContentView BackgroundColor="LightCyan" HorizontalOptions="End" >
+                        <FlexLayout BackgroundColor="LightGoldenrodYellow">
+                            <Label Text="H4" Padding="15,0" FontSize="20"  VerticalOptions="Center"/>
+                            <Label Text="12" Padding="15,0" FontSize="20" VerticalOptions="Center"/>
+                        </FlexLayout>
+                    </ContentView>
+                 
+                </Grid>
+
             </ContentView>
             
         </StackLayout>

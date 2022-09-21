@@ -7,20 +7,48 @@
     xmlns:models="clr-namespace:SkoleIT.Models"
     Shell.TabBarIsVisible="False"
     xmlns:dashboardPages="clr-namespace:SkoleIT.Views.Dashboard"
-    xmlns:startupPages="clr-namespace:SkoleIT.Views.Startup">
+    xmlns:startupPages="clr-namespace:SkoleIT.Views.Startup"
+    FlyoutBehavior="Flyout">
+
+
+    <FlyoutItem Title="Flyout 1" FlyoutDisplayOptions="AsMultipleItems">
+        <!-- Startup Pages skal være i top -->
+
+        <ShellContent
+            Title="Student Card"
+            ContentTemplate="{DataTemplate dashboardPages:StudentDashboardPage}"
+            Route="StudentDashboardPage"/>
+        
+
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate dashboardPages:StudentProfilePage}"
+            Route="StudentProfilePage"/>
+
+        <ShellContent
+            Title="Grades"
+            ContentTemplate="{DataTemplate dashboardPages:StudentGradesPage}"
+            Route="StudentGradesPage"/>
+        <ShellContent
+            Title="Schedule"
+            ContentTemplate="{DataTemplate dashboardPages:StudentSkemaPage}"
+            Route="StudentSkemaPage"/>
+
+
+    </FlyoutItem>
 
     <ShellContent
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled"
-        ContentTemplate="{DataTemplate startupPages:LoadingPage}"
-        Route="LoadingPage" />
+            FlyoutItemIsVisible="False"
+            Shell.FlyoutBehavior="Disabled"
+            ContentTemplate="{DataTemplate startupPages:LoadingPage}"
+            Route="LoadingPage" />
 
     <ShellContent
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled"
-        ContentTemplate="{DataTemplate startupPages:LoginPage}"
-        Route="LoginPage"
-        Title="Login Page" />
+            FlyoutItemIsVisible="False"
+            Shell.FlyoutBehavior="Disabled"
+            ContentTemplate="{DataTemplate startupPages:LoginPage}"
+            Route="LoginPage"
+            Title="Login Page" />
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">

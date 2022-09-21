@@ -1,9 +1,11 @@
+using SkoleIT.ViewModels.Dashboard;
 namespace SkoleIT.Views.Dashboard;
 
 public partial class StudentDashboardPage : ContentPage
 {
-	public StudentDashboardPage()
+	public StudentDashboardPage(StudentDashboardPage viewModel)
 	{
-		InitializeComponent(); 
-	}
+		InitializeComponent();
+        this.BindingContext = viewModel;
+    }
 }

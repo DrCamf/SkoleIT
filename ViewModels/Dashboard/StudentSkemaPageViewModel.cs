@@ -1,4 +1,4 @@
-﻿using SkoleIT.Controls;
+using SkoleIT.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SkoleIT.ViewModels.Dashboard
 {
-    public partial class DashboardPageViewModel : BaseViewModel
+    public partial class StudentSkemaPageViewModel : BaseViewModel
     {
-        public DashboardPageViewModel()
+        public StudentSkemaPageViewModel()
         {
             AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
         }
     }
-}
+}   
