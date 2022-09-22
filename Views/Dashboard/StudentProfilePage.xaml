@@ -14,7 +14,7 @@
                     BorderColor="White"
                     CornerRadius="100"
                     IsClippedToBounds="True">
-                            <Image Source="case_sde_logo.svg" HeightRequest="118" WidthRequest="118"/>
+                            <Image Source="{Binding StudentImage}" HeightRequest="118" WidthRequest="118"/>
                         </Frame>
                         <Label Text="{Binding FullName}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/><!--fullname-->
                         <Label Text="{Binding School}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/> <!--school-->

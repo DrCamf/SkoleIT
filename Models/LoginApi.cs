@@ -11,6 +11,9 @@ namespace SkoleIT.Models
     {
         public int userId { get; set; }
         public string username { get; set; }
+
+        public string fullName { get; set; }
+        public string userimage { get; set; }
         
 
     }

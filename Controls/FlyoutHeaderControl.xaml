@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SkoleIT.Controls.FlyoutHeaderControl">
     <StackLayout Orientation="Horizontal" Spacing="10">
-        <Label x:Name="lblUserName"  FontSize="28" FontAttributes="Bold" />
-        <Label VerticalTextAlignment="Center" FontAttributes="Bold" x:Name="lblUserRole" FontSize="16" />
+        <Image x:Name="UserPic"  HeightRequest="40" WidthRequest="40"/>
+       
+        <Label VerticalTextAlignment="Center" FontAttributes="Bold" x:Name="lblUserName" FontSize="14" />
     </StackLayout>
-    <Label x:Name="lblUserEmail" FontSize="18" />
+    <Label x:Name="lblUserEmail"  FontSize="14" FontAttributes="Bold" />
+    <Label x:Name="lblUserRole" FontSize="14" />
 </StackLayout>

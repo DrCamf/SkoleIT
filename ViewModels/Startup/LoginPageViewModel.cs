@@ -45,11 +45,7 @@ namespace SkoleIT.ViewModels.Startup
         {
             if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
             {
-                var userDetails = new UserBasicInfo
-                {
-                    Email = Email,
-                    FullName = "Test User Name"
-                };
+               
 
 
                 var response = await _loginService.Authenticate(new LoginRequest
@@ -58,7 +54,13 @@ namespace SkoleIT.ViewModels.Startup
                     Password = Password
                 });
 
-                
+                var userDetails = new UserBasicInfo
+                {
+                    Email = Email,
+                    
+                };
+
+
                 if (response.userId > 0)
                 {
                     //await AppShell.Current.DisplayAlert("Valid User", "Correct", "OK");
@@ -67,12 +69,15 @@ namespace SkoleIT.ViewModels.Startup
                     // Student Role, Teacher Role, Admin Role,
                     if (Email.Length > 4)
                     {
+                        userDetails.FullName = response.fullName;
                         userDetails.RoleID = (int)RoleDetails.Student;
                         userDetails.RoleText = "Student Role";
                         userDetails.UserId = response.userId;
+                        userDetails.UserImage = response.userimage;
                     }
                     else 
                     {
+                        userDetails.FullName = response.fullName;
                         userDetails.RoleID = (int)RoleDetails.Teacher;
                         userDetails.RoleText = "Teacher Role";
                         userDetails.UserId = response.userId;
