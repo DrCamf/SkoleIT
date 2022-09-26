@@ -29,11 +29,19 @@
                     <CollectionView ItemsSource="{Binding GradesCollection}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <StackLayout BackgroundColor="LightCyan" Orientation="Horizontal" HeightRequest="50">
-                                    <Label Text="{Binding FAG}" Padding="5"/>
-                                    <Label Text="{Binding level}" Padding="5"/>
-                                    <Label Text="{Binding grades}" Padding="5"/>
-                                    <Label Text="{Binding TYPE}" Padding="5"/>
+                                <StackLayout BackgroundColor="LightCyan" Orientation="Vertical" HeightRequest="50">
+                                    <Grid VerticalOptions="StartAndExpand" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding FAG}" Padding="5"/>
+                                        <Label Grid.Row="1" Text="{Binding level}" Padding="5" Margin="0,0,15,0"/>
+                                        <Label Grid.Row="1" Text="{Binding grades}" Padding="5" Margin="0,0,15,0"/>
+                                        <Label Grid.Row="1" Text="{Binding TYPE}" Padding="5" />
+                                    </Grid>
+                                    
                                 </StackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>

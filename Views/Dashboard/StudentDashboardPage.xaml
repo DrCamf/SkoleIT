@@ -6,90 +6,103 @@
              x:DataType="local:StudentDashboardPageViewModel"
              Title="StudentDashboardPage"
              BackgroundColor="White">
-    <StackLayout>
-        <ContentView>
-            <StackLayout Margin="0,20,0,30" HorizontalOptions="Center">
-                <Frame
+
+    <ScrollView  VerticalOptions="FillAndExpand">
+        <StackLayout>
+            <ContentView>
+                    <StackLayout Margin="0,20,0,30" HorizontalOptions="Center">
+                        <Frame
                     BorderColor="White"
                     CornerRadius="100"
                     IsClippedToBounds="True">
-                    <Image Source="{Binding StudentImage}" HeightRequest="118" WidthRequest="118"/>  <!-- billede -->
-                </Frame>
-                <Label Text="{Binding FullName}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>  <!-- Full name -->
-                <Label Text="{Binding School}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>  <!-- school -->
-            </StackLayout>
-        </ContentView>
-        <ContentView Padding="0,0,0,20">
-            <StackLayout HorizontalOptions="Center">
-                <ContentView Padding="10,0,0,0">
-                    <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                            <Image Source="{Binding StudentImage}" HeightRequest="118" WidthRequest="118"/>
+                            <!-- billede -->
+                        </Frame>
+                        <Label Text="{Binding FullName}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <!-- Full name -->
+                        <Label Text="{Binding School}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <!-- school -->
+                    </StackLayout>
+                </ContentView>
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <ContentView Padding="10,0,0,0">
+                            <Label Text="UNI-LOGIN" TextColor="#535353"/>
+                        </ContentView>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+                                        <Label Text="{Binding UniLogin}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <!-- login -->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
+                </ContentView>
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <ContentView Padding="10,0,0,0">
+                            <Label Text="NAME:" TextColor="#535353"/>
+                        </ContentView>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+                                        <Label  Text="{Binding FullName}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <!-- name -->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
+                </ContentView>
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <ContentView Padding="10,0,0,0">
+                            <Label Text="INSTITUTION:" TextColor="#535353"/>
+                        </ContentView>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+                                        <Label Text="{Binding School}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <!-- insti -->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
+                </ContentView>
+                <ContentView Padding="0,0,0,20">
+                    <StackLayout HorizontalOptions="Center">
+                        <ContentView Padding="10,0,0,0">
+                            <Label Text="BIRTHDATE:" TextColor="#535353"/>
+                        </ContentView>
+                        <ContentView>
+                            <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
+                                <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
+                                    <Frame BorderColor="White" HeightRequest="32">
+                                        <Label Text="{Binding Birth}" HeightRequest="21" TextColor="#535353" FontSize="15"/>
+                                        <!-- birth -->
+                                    </Frame>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </ContentView>
+                    </StackLayout>
                 </ContentView>
                 <ContentView>
-                    <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
-                        <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
-                            <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="{Binding UniLogin}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- login -->
-                            </Frame>
-                        </VerticalStackLayout>
-                    </ContentView>
-                </ContentView> 
-            </StackLayout>
-        </ContentView>
-        <ContentView Padding="0,0,0,20">
-            <StackLayout HorizontalOptions="Center">
-                <ContentView Padding="10,0,0,0">
-                    <Label Text="NAME:" TextColor="#535353"/>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="2">
+                        <Label Text="Validated by" HorizontalOptions="Center" Padding="2"/>
+                        <Label Text="{Binding School}" HorizontalOptions="Center" Padding="2"/>
+                        <!-- school -->
+                        <Label Text="{Binding EndDate}" HorizontalOptions="Center" Padding="2,0,0,20"/>
+                        <!-- enddate -->
+                        <!--<Button Text="CHECK" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" Padding="50,10" BackgroundColor="#0E7E93"/>-->
+                    </StackLayout>
                 </ContentView>
-                <ContentView>
-                    <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
-                        <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
-                            <Frame BorderColor="White" HeightRequest="32">
-                                <Label  Text="{Binding FullName}" HeightRequest="21" TextColor="#535353" FontSize="15"/><!-- name -->
-                            </Frame>
-                        </VerticalStackLayout>
-                    </ContentView>
-                </ContentView>
-            </StackLayout>
-        </ContentView>
-        <ContentView Padding="0,0,0,20">
-            <StackLayout HorizontalOptions="Center">
-                <ContentView Padding="10,0,0,0">
-                    <Label Text="INSTITUTION:" TextColor="#535353"/> 
-                </ContentView>
-                <ContentView>
-                    <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
-                        <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
-                            <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="{Binding School}" HeightRequest="21" TextColor="#535353" FontSize="15"/> <!-- insti -->
-                            </Frame>
-                        </VerticalStackLayout>
-                    </ContentView>
-                </ContentView>
-            </StackLayout>
-        </ContentView>
-        <ContentView Padding="0,0,0,20">
-            <StackLayout HorizontalOptions="Center">
-                <ContentView Padding="10,0,0,0">
-                    <Label Text="BIRTHDATE:" TextColor="#535353"/>
-                </ContentView>
-                <ContentView>
-                    <ContentView BackgroundColor="#00788A" Padding="3,0,0,3" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="36">
-                        <VerticalStackLayout BackgroundColor="White" Padding="0,0,0,0" WidthRequest="300" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="33">
-                            <Frame BorderColor="White" HeightRequest="32">
-                                <Label Text="{Binding Birth}" HeightRequest="21" TextColor="#535353" FontSize="15"/>  <!-- birth -->
-                            </Frame>
-                        </VerticalStackLayout>
-                    </ContentView>
-                </ContentView>
-            </StackLayout>
-        </ContentView>
-        <ContentView>
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="2">
-                <Label Text="Validated by" HorizontalOptions="Center" Padding="2"/>
-                <Label Text="{Binding School}" HorizontalOptions="Center" Padding="2"/>  <!-- school -->
-                <Label Text="{Binding EndDate}" HorizontalOptions="Center" Padding="2,0,0,20"/>  <!-- enddate -->
-                <!--<Button Text="CHECK" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" Padding="50,10" BackgroundColor="#0E7E93"/>-->
-            </StackLayout>
-        </ContentView>
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    
 </ContentPage>

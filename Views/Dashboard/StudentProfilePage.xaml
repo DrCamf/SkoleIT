@@ -5,7 +5,7 @@
              xmlns:local="clr-namespace:SkoleIT.ViewModels.Dashboard"
              x:DataType="local:StudentProfilePageViewModel">
     <ContentPage.Content>
-        <ScrollView >
+        <ScrollView>
             <StackLayout>
                 <!--Header-->
                 <ContentView>

@@ -25,14 +25,16 @@ public static class MauiProgram
         builder.Services.AddSingleton<StudentCardService>();
         builder.Services.AddSingleton<StudentGradesService>();
         builder.Services.AddSingleton<StudentProfileService>();
+        builder.Services.AddSingleton<StudentSkemaService>();
 
-        //Views
-        builder.Services.AddSingleton<LoginPage>();
+       //Views
+       builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<DashboardPage>();
         builder.Services.AddSingleton<LoadingPage>();
         builder.Services.AddSingleton<StudentDashboardPage>();
         builder.Services.AddSingleton<StudentGradesPage>();
         builder.Services.AddSingleton<StudentProfilePage>();
+        builder.Services.AddSingleton<StudentSkemaPage>();
 
 
         //View Models
@@ -42,6 +44,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<StudentDashboardPageViewModel>();
         builder.Services.AddSingleton<StudentGradesPageViewModel>();
         builder.Services.AddSingleton<StudentProfilePageViewModel>();
+        builder.Services.AddSingleton<StudentSkemaPageViewModel>();
 
         //builder.Services.AddTransient<StudentGradesPage>();
 

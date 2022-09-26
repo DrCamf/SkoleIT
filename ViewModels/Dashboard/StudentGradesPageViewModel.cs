@@ -23,6 +23,7 @@ namespace SkoleIT.ViewModels.Dashboard
             var response = _studentgradesservice.GetGrades(userid);
             foreach (Grades grade in response.ToArray())
             {
+               
                 gradesCollection.Add(grade);
             }
         }

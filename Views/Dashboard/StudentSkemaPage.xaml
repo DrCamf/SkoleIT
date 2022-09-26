@@ -4,11 +4,144 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SkoleIT.Views.Dashboard">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to .NET MAUI!!!"
-                   HorizontalOptions="Center"
-                   TextColor="Purple"
-                   VerticalOptions="Center"/>
+        <StackLayout VerticalOptions="Fill">
+            <!-- Week Days -->
+            <ContentView>
+                <FlexLayout
+                    AlignContent="Center"
+                    AlignItems="Center"
+                    JustifyContent="SpaceEvenly"
+                    Wrap="NoWrap"
+                    VerticalOptions="Fill"
+                    HeightRequest="100">
+                    <Button Text="Mon" 
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                            Command="{Binding DagCommand}"
+                            CommandParameter="mandag"/>
+
+                    <Button Text="Tue" 
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding DagCommand}"
+                            CommandParameter="tirsdag"/>
+
+                    <Button Text="Wed" 
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding DagCommand}"
+                            CommandParameter="onsdag"/>
+
+                    <Button Text="Thur" 
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding DagCommand}"
+                            CommandParameter="torsdag"/>
+
+                    <Button Text="Fri" 
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding DagCommand}"
+                            CommandParameter="fredag"/>
+                </FlexLayout>
+            </ContentView>
+
+            <!-- Courses -->
+            <ScrollView>
+                <StackLayout VerticalOptions="Fill">
+                    <!-- First class -->
+                    <ContentView BackgroundColor="#FCFCFC" Padding="15,0,15,0">
+                        <!-- Flex Layout-->
+                        <FlexLayout 
+                                AlignContent="Center"
+                                AlignItems="Center"
+                                JustifyContent="Center"
+                            VerticalOptions="Fill"
+                                Wrap="NoWrap"
+                                HeightRequest="560"
+                                FlexLayout.Basis="100%">
+                                        <!-- Times -->
+
+                            <CollectionView ItemsSource="{Binding SkemaCollection}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalOptions="Fill">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*" />
+                                                
+                                                <ColumnDefinition Width="2*" />
+
+                                            </Grid.ColumnDefinitions>
+                                           <ContentView 
+                                                   Grid.Column="0"
+                                                    FlexLayout.AlignSelf="Start"
+                                                    FlexLayout.Basis="25%"
+                                                    FlexLayout.Shrink="25"
+                                                    FlexLayout.Order="1"
+                                                    HeightRequest="75"
+                                               > 
+
+                                                <StackLayout   HorizontalOptions="Center" VerticalOptions="Center" >
+                                                    <Label Text="{Binding Start}"
+                                                       TextColor="#00788A"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"
+                                                       />
+
+                                                    <Label Text= "{Binding End}"
+                                                       TextColor="#00788A"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"/>
+                                                </StackLayout>
+                                            </ContentView>
+                                            <!--Text Content-->
+
+                                           <ContentView 
+                                                 Grid.Column="1"
+                                            FlexLayout.AlignSelf="Stretch"
+                                            FlexLayout.Basis="75%"
+                                            FlexLayout.Order="2">
+                                            
+                                            <StackLayout >
+                                                    <Label Text="{Binding Fag}"
+                                                       TextColor="#464646"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"/>
+
+                                                    <Label Text="{Binding Room}"
+                                                       TextColor="#464646"
+                                                       FontSize="17"/>
+
+                                                    <Label Text="{Binding Teacher}"
+                                                       TextColor="#464646"
+                                                       FontSize="17"/>
+                                                </StackLayout>
+                                            </ContentView>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </FlexLayout>
+                    </ContentView>
+                    <!-- First class End-->
+                            <!-- Splitter -->
+                    <!-- <ContentView Padding="50" HeightRequest="5" BackgroundColor="#00788A"></ContentView>-->
+                    <!-- Second class Start-->
+                     
+                </StackLayout>
+
+            </ScrollView>
+                    
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
