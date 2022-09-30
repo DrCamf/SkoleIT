@@ -43,7 +43,10 @@
             Title="Schedule"
             ContentTemplate="{DataTemplate dashboardPages:StudentSkemaPage}"
             Route="StudentSkemaPage"/>
-
+        <ShellContent
+            Title="Skema"
+            ContentTemplate="{DataTemplate dashboardPages:NewSkema}"
+            Route="NewSkema"/>
 
     </FlyoutItem>
 

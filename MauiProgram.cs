@@ -1,4 +1,5 @@
-﻿using SkoleIT.Services;
+﻿
+using SkoleIT.Services;
 using SkoleIT.ViewModels;
 using SkoleIT.ViewModels.Dashboard;
 using SkoleIT.ViewModels.Startup;
@@ -35,6 +36,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<StudentGradesPage>();
         builder.Services.AddSingleton<StudentProfilePage>();
         builder.Services.AddSingleton<StudentSkemaPage>();
+        builder.Services.AddSingleton<NewSkema>();
 
 
         //View Models
@@ -45,6 +47,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<StudentGradesPageViewModel>();
         builder.Services.AddSingleton<StudentProfilePageViewModel>();
         builder.Services.AddSingleton<StudentSkemaPageViewModel>();
+        builder.Services.AddSingleton<NewSkemaViewModel>();
 
         //builder.Services.AddTransient<StudentGradesPage>();
 

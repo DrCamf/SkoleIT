@@ -14,6 +14,8 @@ namespace SkoleIT.Models
         public string UserImage { get; set; }
         public int RoleID { get; set; } 
         public string RoleText { get; set; }
+
+        public string Admitent { get; set; }
     }
 
     public enum RoleDetails

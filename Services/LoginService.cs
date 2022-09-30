@@ -29,7 +29,11 @@ namespace SkoleIT.Services
                 {
                    
                     var json = response.Content.ToString();
-                    Debug.WriteLine(json);
+                    var userDetails = new UserBasicInfo
+                    {
+                        Admitent = encoded
+
+                    };
                     return JsonConvert.DeserializeObject<LoginApi>(json);
                    // return null;
                 }

@@ -25,6 +25,7 @@ namespace SkoleIT.Services
         public StudentCard getStudentCard(int id)
         {
             var url = "https://svt.elthoro.dk";
+            //var url = "http://localhost/SkoleITApi";
             var client = new RestClient(url);
             
             var apiurl = "/?pass=elev&item=card&id=" + id;

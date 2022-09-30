@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="SkoleIT.Views.Dashboard.NewSkema"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SkoleIT.Views.Dashboard">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Fill">
+            <!-- Week Days -->
+            <StackLayout>
+                <Picker Title="Select Week"
+                    ItemsSource="{Binding Weeks}"
+                        ItemDisplayBinding="{Binding WeekNumber}"
+                        SelectedIndex="7"  />
+            </StackLayout>
+            <ContentView>
+                <FlexLayout
+                    AlignContent="Center"
+                    AlignItems="Center"
+                    JustifyContent="SpaceEvenly"
+                    Wrap="NoWrap"
+                    VerticalOptions="Fill"
+                    HeightRequest="100">
+
+
+                    <Button Text="Mon"
+                            x:Name="Mon"
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                            Command="{Binding ChangeDay}"
+                            CommandParameter="" 
+                            />
+
+                    <Button Text="Tue" 
+                            x:Name="Tue"
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding ChangeDay}"
+                            CommandParameter=""/>
+
+                    <Button Text="Wed" 
+                            x:Name="Wed"
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding ChangeDay}"
+                            CommandParameter=""/>
+
+                    <Button Text="Thur" 
+                            x:Name="Thu"
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding ChangeDay}"
+                            CommandParameter=""/>
+
+                    <Button Text="Fri" 
+                            x:Name="Fri"
+                            TextColor="#464646"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="#FCFCFC"
+                             Command="{Binding ChangeDay}"
+                            CommandParameter=""/>
+                </FlexLayout>
+            </ContentView>
+
+            <ScrollView>
+
+                <StackLayout VerticalOptions="Fill" >
+                    <!-- First class -->
+                    <ContentView BackgroundColor="#FCFCFC" Padding="15,0,15,0">
+                        <!-- Flex Layout-->
+                        <FlexLayout 
+                                AlignContent="Center"
+                                AlignItems="Center"
+                                JustifyContent="SpaceEvenly"
+                            VerticalOptions="Fill"
+                                Wrap="NoWrap"
+                                HeightRequest="760"
+                                FlexLayout.Basis="100%">
+                            <!-- Times -->
+                            <ListView  ItemsSource="{Binding Skemas}"  HasUnevenRows="True">
+                   
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell  >
+                                            <StackLayout Spacing="10" >
+                                                <Grid HorizontalOptions="StartAndExpand"  >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*" />
+
+                                                        <ColumnDefinition Width="2*" />
+
+                                                    </Grid.ColumnDefinitions>
+                                                <ContentView  
+                                                   Grid.Column="0"
+                                                    FlexLayout.AlignSelf="Start"
+                                                    FlexLayout.Basis="25%"
+                                                    FlexLayout.Shrink="25"
+                                                    FlexLayout.Order="1"
+                                                    
+                                                    Margin="5,0,15,0"
+                                               >
+
+                                                        <StackLayout   HorizontalOptions="Center" VerticalOptions="Center" >
+                                                            <Label Text="{Binding Start}"
+                                                       TextColor="#00788A"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"
+                                                       />
+
+                                                            <Label Text= "{Binding End}"
+                                                       TextColor="#00788A"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"/>
+
+                                                        </StackLayout>
+                                                    </ContentView>
+                                                    <!--Text Content-->
+                                               
+                                                <ContentView
+                                                 Grid.Column="1"
+                                            FlexLayout.AlignSelf="Stretch"
+                                            FlexLayout.Basis="80%"
+                                            FlexLayout.Order="2"
+                                                      >
+
+                                                    <StackLayout >
+
+                                                            <Label Text="{Binding Fag}"
+                                                       TextColor="#464646"
+                                                       FontAttributes="Bold"
+                                                       FontSize="17"/>
+                                                        <StackLayout Orientation="Horizontal">   
+                                                            <StackLayout Orientation="Horizontal" Margin="0,0,10,0" >
+                                                                    <Label Text="Lokale "/>
+
+                                                                    <Label Text="{Binding Room}"
+                                                           TextColor="#464646"
+                                                           FontSize="17"/>
+                                                                </StackLayout>
+                                                                <StackLayout Orientation="Horizontal" >
+                                                                    <Label Text="Lærer "/>
+                                                                    <TextBlock Text="{Binding Teacher}"/>
+
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    </ContentView>
+                                                </Grid>
+                                                <!--<Label Text="{Binding FruitName}"  Margin="0,0,5,0"/>
+                                    <Label Text="{Binding FruitStuff}" />-->
+                                            </StackLayout>
+                                        </ViewCell>
+                        </DataTemplate>
+                       
+                    </ListView.ItemTemplate>
+                </ListView>
+                        </FlexLayout>
+                    </ContentView>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

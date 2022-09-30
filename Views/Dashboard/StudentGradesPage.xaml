@@ -5,6 +5,7 @@
               
              >
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             <ContentView>
                 <StackLayout Margin="0,20,0,30" HorizontalOptions="Center">
@@ -24,33 +25,41 @@
             <ContentView>
 
                 <!-- Needs to loop and create these through the model-->
-                <Grid ColumnDefinitions="*" Padding="10" HeightRequest="350" BackgroundColor="LightBlue">
+                <Grid ColumnDefinitions="*" Padding="10" HeightRequest="550" BackgroundColor="LightBlue">
 
-                    <CollectionView ItemsSource="{Binding GradesCollection}">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout BackgroundColor="LightCyan" Orientation="Vertical" HeightRequest="50">
-                                    <Grid VerticalOptions="StartAndExpand" >
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="1*"/>
-                                            <RowDefinition Height="1*"/>
-                                            
-                                        </Grid.RowDefinitions>
-                                        <Label Grid.Row="0" Text="{Binding FAG}" Padding="5"/>
-                                        <Label Grid.Row="1" Text="{Binding level}" Padding="5" Margin="0,0,15,0"/>
-                                        <Label Grid.Row="1" Text="{Binding grades}" Padding="5" Margin="0,0,15,0"/>
-                                        <Label Grid.Row="1" Text="{Binding TYPE}" Padding="5" />
-                                    </Grid>
-                                    
-                                </StackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
+                    
+                        <CollectionView ItemsSource="{Binding GradesCollection}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout BackgroundColor="LightBlue" Orientation="Vertical" HeightRequest="50">
+                                        <Grid VerticalOptions="StartAndExpand"  >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="1*"/>
 
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Text="{Binding FAG}" />
+                                            <StackLayout Orientation="Horizontal" Grid.Row="1">
+
+                                                <Label Text="Niveau: "/>
+                                                <Label  Text="{Binding level}"  />
+                                                <Label Text=" Karakter: "/>
+                                                <Label  Text="{Binding grades}" />
+                                                <Label Text=" Type: "/>
+                                                <Label  Text="{Binding TYPE}"  />
+                                            </StackLayout>
+                                        </Grid>
+
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                   
                 </Grid>
 
             </ContentView>
 
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
